@@ -44,7 +44,8 @@ export class ClienteService {
         // Converter a imagem de Base64 para Blob
         let pictureBlob = this.imageUtilService.dataUriToBlob(picture);
         let formData : FormData = new FormData();
-        formData.set('file', pictureBlob, 'file.png');
+        formData.set('file', pictureBlob, 'file.jpg');
+
         return this.http.post(
             `${API_CONFIG.baseurl}/clientes/picture`,
             formData,
